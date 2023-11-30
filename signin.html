@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form in HTML and CSS</title>
+    <style>
+        body {
+            background-image: url('https://tse4.mm.bing.net/th?id=OIP.PA-ThsH678gIYQlKeUpxBAHaEo&pid=Api&P=0&h=180');
+            background-size: cover; 
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+        }
+        
+        label {
+            color: red; 
+        }
+
+        input {
+            color: red; 
+        }
+        h1{
+            color:orange;
+        }
+
+       
+    </style>
+   
+   
+    <body>
+        <div class="wrapper">
+            <form action="/signin/" method="POST" id="loginForm">
+                {%csrf_token%}
+               
+                <h1><i>Login And Registration Form</i></h1>
+                <div class="input-box">
+                    <label for="username">USERNAME:-</label><br>
+                    <input type="text" id="username" placeholder="USERNAME" name="username" required>
+                    <i class="bx bxs-user"></i>
+                </div><br>
+                <div class="input-box">
+                    <label for="pass1">PASSWORD:-</label><br>
+                    <input type="password" id="pass1" placeholder="PASSWORD" name="pass1" required>
+                    <i class="bxs-lock-alt"></i>
+                </div><br>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Remember me</label><br><br>
+                    <a href="{% url 'password_reset' %}">Forgot Password?</a><br>
+                </div><br>
+    
+                <button type="submit" class="btn" style="background-color: blue;" id="loginButton">Login</button>
+            </form>
+        </div>
+    </body>
+    </html>

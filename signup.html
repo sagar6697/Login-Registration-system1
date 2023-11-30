@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        body {
+            background-image: url('https://tse4.mm.bing.net/th?id=OIP.PA-ThsH678gIYQlKeUpxBAHaEo&pid=Api&P=0&h=180');
+            background-size: cover; /* Adjust the background-size property as needed */
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif; /* Adjust the font-family property as needed */
+            margin: 0; /* Remove default margin */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Set the height to 100% of the viewport height */
+        }
+        .container{
+            text-color:red;
+
+        }
+
+       
+    </style>
+
+</head>
+
+<body>
+    <form action="/signup" method='POST'>
+        {% csrf_token %}
+        <div class="container">
+            <h1>Sign Up</h1>
+            <hr><br><br>
+            <label for="fname"><b>First Name</b></label><br><br>
+            <input type="text" placeholder="Enter the first name" name="fname" id="fname" pattern="[A-Za-z]+" title="Only alphabetic characters are allowed" required><br><br>
+
+            <label for="lname"><b>Last Name</b></label><br><br>
+            <input type="text" placeholder="Enter the last name" name="lname" id="lname" pattern="[A-Za-z]+" title="Only alphabetic characters are allowed" required><br><br>
+
+            <label for="email"><b>Email</b></label><br><br>
+            <input type="email" placeholder="Enter the email" name="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Enter a valid email address" required><br><br>
+
+            <label for="phoneNo"><b>Phone No.</b></label><br><br>
+            <input type="text" placeholder="Enter the phone no." name="phoneNo" id="phoneNo" pattern="[0-9]{10}" title="Enter a valid 10-digit phone number" required><br><br>
+
+            <label for="username"><b>User Name</b></label><br><br>
+            <input type="text" placeholder="Enter the user name" name="username" id="username" required><br><br>
+
+            <label for="pass1"><b>Password</b></label><br><br>
+            <input type="password" placeholder="Enter a strong password" name="pass1" id="pass1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}" title="Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character" required><br><br>
+
+            <label for="pass2"><b>Confirm Password</b></label><br><br>
+            <input type="password" placeholder="Confirmation Password" name="pass2" id="pass2" required><br><br>
+
+            <input type="submit" value="Sign Up">
+            <p>Already have an account? <a href="/signin">Login</a></p>
+        </div>
+    </form>
+</body>
+</html>
